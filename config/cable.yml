@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: WorkoutTrack_production
+  channel_prefix: DoItHarder_production
