@@ -40,6 +40,16 @@ class ExercisesController < ApplicationController
     end
   end
   
+  
+
+  def destroy
+    @exercise = Exercise.find(params[:id])
+    @exercise.destroy
+ 
+    redirect_to exercises_path
+  end
+  
+  
   private
     def exercise_params
       params.require(:exercise).permit(:name)
