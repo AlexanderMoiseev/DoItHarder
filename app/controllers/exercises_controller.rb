@@ -24,6 +24,16 @@ class ExercisesController < ApplicationController
       else
         render 'new'
       end
+      
+      
+
+      # p = Routine.new
+   #    p.name = "SomeRoutine"
+   #    p.user_id = 2
+   #
+   #    p.exercises << @exercise
+   #    p.save
+      
   end
   
   def update
