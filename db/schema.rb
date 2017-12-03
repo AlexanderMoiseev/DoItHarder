@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127064430) do
+ActiveRecord::Schema.define(version: 20171203111618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercise_sets", force: :cascade do |t|
+    t.integer "repetition"
+    t.decimal "weight"
+    t.bigint "exercise_id"
+    t.bigint "routine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_exercise_sets_on_exercise_id"
+    t.index ["routine_id"], name: "index_exercise_sets_on_routine_id"
+  end
 
   create_table "exercises", force: :cascade do |t|
     t.text "name"
@@ -53,5 +64,7 @@ ActiveRecord::Schema.define(version: 20171127064430) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "exercise_sets", "exercises"
+  add_foreign_key "exercise_sets", "routines"
   add_foreign_key "routines", "users"
 end
