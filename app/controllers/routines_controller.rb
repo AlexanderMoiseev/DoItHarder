@@ -6,9 +6,13 @@ class RoutinesController < ApplicationController
   
   
   def new
-    puts "RandomRandomRandomRandomRandomRandomRandomRandomRandomRandomRandomRandomRandomRandom"
+    
   end
   
-  
+  def show_exercises
+    # render plain: params.inspect
+      @routine = Routine.find(params[:id])
+    
+  end
   
 end

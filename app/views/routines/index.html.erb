@@ -7,14 +7,17 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Text</th>
+    <th>id</th>
   </tr>
  
   <% @routines.each do |routine| %>
     <tr>
       <td><%= routine.name %></td>
+	  
 
-      <td><%= link_to 'Show', routine_path(routine) %></td>
+	  
+	    <td><%= link_to routine.id , { :controller => "routines", :action => "show_exercises", :id => routine.id } %></td>
+      <!-- <td><%= link_to routine.name, routines_show_exercises_path(routine.id)  %></td> -->
 	  
 	  <td><%= link_to 'Edit', edit_routine_path(routine) %></td>
 	  

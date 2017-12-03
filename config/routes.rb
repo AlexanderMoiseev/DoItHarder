@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: "home#index"
   get 'routines/index'
+get "routines/show_exercises"
+# get "routines/show_exercises/:id", to: "routines#show_exercises"
+
 
   get 'home/index'
 
