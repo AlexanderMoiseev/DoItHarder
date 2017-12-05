@@ -1,0 +1,20 @@
+<p> <% @routine %> </p>
+
+<%= form_with scope: :exercise, :url => url_for(:controller => 'routines', :action => 'create_exercise'), local: true do |form| %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <!-- <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+  -->
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', exercises_path %>
