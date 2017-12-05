@@ -1,6 +1,7 @@
-<p> <% @routine %> </p>
+<p> <%= @routine.id %></p>
 
-<%= form_with scope: :exercise, :url => url_for(:controller => 'routines', :action => 'create_exercise'), local: true do |form| %>
+
+<%= form_with scope: :exercise, :url => url_for(:controller => 'routines', :action => 'create_exercise', id: @routine.id ), local: true do |form| %>
 
   <p>
     <%= form.label :name %><br>

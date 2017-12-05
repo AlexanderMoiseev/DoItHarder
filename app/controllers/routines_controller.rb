@@ -1,9 +1,7 @@
 class RoutinesController < ApplicationController
   def index
-    
     @routines = Routine.all
   end
-  
   
   def new
     
@@ -11,10 +9,7 @@ class RoutinesController < ApplicationController
   
   def show
     @routine = Routine.find(params[:id])
-    
   end
-  
-  
   
   def create    
     @routine =  current_user.routines.new(routine_params)
@@ -28,29 +23,46 @@ class RoutinesController < ApplicationController
   
   
   def show_exercises
-    
      # render plain: params.inspect
       @routine = Routine.find(params[:id])
-    
   end
   
   def create_exercise
     
+    @routine = Routine.find(params[:id])
+
+    @exercise =  current_user.exercises.new(exercise_params)
+    puts '_________________'
+    puts '_________________'
+    puts @exercise.name
+    puts '_________________'
     
-    # render plain: params.inspect
+     if @exercise.save
+       redirect_to action: "show_exercises", id: @routine.id
+        # redirect_to routines_show_exercises_path
+      else
+        render 'errorHereTestIt'
+      end
+    
+          # @ex = params[:exercise]
+   #        puts '_________________'
+   #        puts @ex[:name]
+   #        puts '_________________'
+    
 
     
   end
   
   
   def add_exercise
-     puts 'add_exercise'
     
      @routine = Routine.find(params[:id])
-     # render plain: params.inspect
+    
     
 
-   render_to_string 'add_exercise'
+    
+
+   # render_to_string 'add_exercise'
 
       # render_to_string :action => "show_exercises"
      # respond_to do |format|
@@ -86,5 +98,9 @@ class RoutinesController < ApplicationController
     def routine_params
       params.require(:routine).permit(:name)
     end
+    
+    def exercise_params
+        params.require(:exercise).permit(:name)
+      end
     
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'routines/index'
   
 get "routines/show_exercises", to: "routines#show_exercises"
-get "routines/add_exercise"
+get "routines/add_exercise",  to: "routines#add_exercise"
 # get "routines/show_exercises/:id", to: "routines#show_exercises"
 post "routine/create_exercise", to: "routines#create_exercise"
 
