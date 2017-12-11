@@ -7,16 +7,26 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'jquery';
+// import jQuery from 'jquery'
+
+// window.jQuery = jQuery
+
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
 require("my_file")
 
-console.log('Hello World22322')
+console.log('Hello ')
+
+$(document).ready(function() {
+    console.log( "ready!" );
+});
+
+
+
 
 // require('script')
 //
 //
 // console.log('Hello World from Webpacker')
 //
-// $( document ).ready(function() {
-//     console.log( "ready!" );
-// });
