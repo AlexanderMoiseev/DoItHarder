@@ -28,70 +28,20 @@ class RoutinesController < ApplicationController
   end
   
   def create_exercise
-    
     @routine = Routine.find(params[:id])
-
     @exercise =  current_user.exercises.new(exercise_params)
-    puts '_________________'
-    puts '_________________'
-    puts @exercise.name
-    puts '_________________'
     
      if @exercise.save
-       redirect_to action: "show_exercises", id: @routine.id
-        # redirect_to routines_show_exercises_path
+         redirect_to routines_show_exercises_path(:id => @routine.id)
+         @routine.exercises << @exercise
       else
         render 'errorHereTestIt'
       end
-    
-          # @ex = params[:exercise]
-   #        puts '_________________'
-   #        puts @ex[:name]
-   #        puts '_________________'
-    
-
-    
   end
   
   
   def add_exercise
-    
      @routine = Routine.find(params[:id])
-    
-    
-
-    
-
-   # render_to_string 'add_exercise'
-
-      # render_to_string :action => "show_exercises"
-     # respond_to do |format|
-   #      format.html { redirect_to action: 'show_exercises', id: @routine.id}
-   #    end
-     
-     
-          #
-     #
-     # @exercise =  current_user.exercises.new(exercise_params)
-     #
-     #  if @exercise.save
-     #     redirect_to @exercise
-     #   else
-     #     render 'new'
-     #   end
-     #
-      
-
-       # p = Routine.new
-    #    p.name = "SomeRoutine"
-    #    p.user_id = 2
-    #
-    #    p.exercises << @exercise
-    #    p.save
-    
-    
-    
-    
   end
   
   private

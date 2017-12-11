@@ -2,14 +2,33 @@
 <p>   Routine Exersices will bwe listed here </p>	
 	
 <p>
-  <strong>Titlessss:</strong>
-  <%= @routine.name %>
-  
-  
-  
 
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+ 
+  <% @routine.exercises.each do |exercise| %>
+    <tr>
+      <td><%= exercise.name %></td>
+
+      <td><%= link_to 'Show', exercise_path(exercise) %></td>
+	  
+	  <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
+	  
+	  <td><%= link_to 'Destroy', exercise_path(exercise),
+	                method: :delete,
+	                data: { confirm: 'Are you sure?' } %></td>
+					
+    </tr>
+  <% end %>
+</table>
   
-  
+  <br>
+    <br>  <br>  <br>  <br>  <br>
   
      <td><%= link_to 'Add Exercise' , { :controller => "routines", :action => "add_exercise", :id => @routine.id } %></td>
 	 
