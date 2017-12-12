@@ -14,6 +14,8 @@
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
+
+
 require("my_file")
 
 console.log('Hello ')

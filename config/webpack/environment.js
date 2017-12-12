@@ -1,14 +1,24 @@
 const { environment } = require('@rails/webpacker')
 
-const webpack = require('webpack')
+var webpack = require('webpack')
 
-module.exports = {
-  resolve: {
-    alias: {
-      jquery: 'jquery/src/jquery',
-    }
-  }
-}
+// plugins: [
+//   new webpack.ProvidePlugin({
+//     $: 'jquery',
+//     jQuery: 'jquery',
+//     jquery: 'jquery'
+//   })
+// ]
+
+	
+	
+// module.exports = {
+//   resolve: {
+//     alias: {
+//       jquery: 'jquery/src/jquery',
+//     }
+//   }
+// }
 
 
 // new webpack.ProvidePlugin({
@@ -23,14 +33,6 @@ module.exports = {
 //     jQuery: 'jquery',
 //   })
 // )
-
-plugins: [
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    jquery: 'jquery'
-  })
-]
 
 
 module.exports = environment
