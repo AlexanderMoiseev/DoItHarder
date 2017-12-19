@@ -7,31 +7,34 @@
  <br> <br> <br> <br> <br> <br> <br>
  
  
- <%= form_with scope: :exercise_set, :url => url_for(:controller => 'exercises', :action => 'create_set', exercise_id: @exercise.id ),local: true do |form| %>
+  
+  
 
+
+
+<%= form_with(model: @exercise) do |form| %>
+
+   <p>
+     <%= form.label :name %><br>
+     <%= form.text_field :name %>
+   </p>
  
+ 
+ 
+ 
+ 
+ <%= form.fields_for :exercise_sets do |project_fields| %>
+    
+      Name: <%= project_fields.text_field :weight %>
+   
+  <% end %>
 
-  <table border="0" cellspacing="5" cellpadding="5">
-  	<tr>
-  		<td>
-        <%= form.label :repetition %>
-        <%= form.number_field :repetition %>
-		
-	    <%= form.label :weight %>
-	    <%= form.number_field :weight %>
-		
-		
-		
-		
-	</td>
-</tr>
-  </table>
-  
-  <div class="actions">
-    <%= form.submit "add set" %>
-  </div>
-  
+	   
+   <p>
+     <%= form.submit %>
+   </p>
  <% end %>
+
 
 
  

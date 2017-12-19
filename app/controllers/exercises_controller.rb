@@ -12,6 +12,12 @@ class ExercisesController < ApplicationController
    end
 
    
+   def create_set2
+        puts "______________________________________"
+                puts "______________________________________"
+                        puts "______________________________________"
+   end
+   
    
    def create_set
     # render plain: params.inspect
