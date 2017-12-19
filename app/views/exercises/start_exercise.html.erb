@@ -1,0 +1,42 @@
+
+<p>
+	  <strong>Start Exercises:</strong>
+  <%= @exercise.name %>
+</p>
+ 
+ <br> <br> <br> <br> <br> <br> <br>
+ 
+ 
+ <%= form_with scope: :exercise_set, :url => url_for(:controller => 'exercises', :action => 'create_set', exercise_id: @exercise.id ),local: true do |form| %>
+
+ 
+
+  <table border="0" cellspacing="5" cellpadding="5">
+  	<tr>
+  		<td>
+        <%= form.label :repetition %>
+        <%= form.number_field :repetition %>
+		
+	    <%= form.label :weight %>
+	    <%= form.number_field :weight %>
+		
+		
+		
+		
+	</td>
+</tr>
+  </table>
+  
+  <div class="actions">
+    <%= form.submit "add set" %>
+  </div>
+  
+ <% end %>
+
+
+ 
+ 
+ <br> <br> <br> <br> <br> <br> <br>
+  <%= link_to 'Edit', edit_exercise_path(@exercise) %>
+
+<%= link_to 'Back', exercises_path %>

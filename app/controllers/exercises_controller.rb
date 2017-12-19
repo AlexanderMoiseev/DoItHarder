@@ -21,7 +21,7 @@ class ExercisesController < ApplicationController
       
       puts exercise_set.repetition
        puts exercise_set.weight
-
+exercise_set.save
 # :exercise_sets
                            
     # @exercise_set = Exercise_set.
@@ -31,8 +31,12 @@ class ExercisesController < ApplicationController
    
    
   def new
+   
   end
   
+  def start_exercise
+    @exercise = Exercise.find(params[:id])
+  end
   
   def show
     @exercise = Exercise.find(params[:id])
@@ -46,6 +50,7 @@ class ExercisesController < ApplicationController
   
   
   def create    
+   
     @exercise =  current_user.exercises.new(exercise_params)
      
      if @exercise.save
