@@ -12,7 +12,7 @@
 
 
 
-<%= form_with(model: @exercise) do |form| %>
+<%= form_with model: @exercise, :html => { :method => :post }, :url => url_for(:controller => 'exercises', :action => 'create_set2') , local: true do |form| %>
 
    <p>
      <%= form.label :name %><br>
@@ -23,15 +23,16 @@
  
  
  
- <%= form.fields_for :exercise_sets do |project_fields| %>
+ <%= form.fields_for :exercise_sets do |ff| %>
     
-      Name: <%= project_fields.text_field :weight %>
+      weight: <%= ff.text_field :weight %>
+	   repetitions: <%= ff.text_field :repetition %>
    
   <% end %>
 
 	   
    <p>
-     <%= form.submit %>
+     <%= form.submit 'complete exercise' %>
    </p>
  <% end %>
 
