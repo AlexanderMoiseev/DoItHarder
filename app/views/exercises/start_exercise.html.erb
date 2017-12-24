@@ -21,16 +21,12 @@
  
  
  
- 
- 
- <%= form.fields_for :exercise_sets do |ff| %>
-    
-      weight: <%= ff.text_field :weight %>
-	   repetitions: <%= ff.text_field :repetition %>
-   
+ <%= form.fields_for :exercise_sets, include_id: false  do |ff| %>
+  <%= render 'exercise_set_fields', f: ff %>
   <% end %>
 
-	   
+	     <%= link_to_add_fields "Add sets", form, :exercise_sets %>
+		 
    <p>
      <%= form.submit 'complete exercise' %>
    </p>

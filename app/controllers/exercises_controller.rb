@@ -13,6 +13,7 @@ class ExercisesController < ApplicationController
 
    
    def create_set2
+     render plain: params.inspect
         puts "create_set2"
                 puts "______________________________________"
                         puts "______________________________________"
