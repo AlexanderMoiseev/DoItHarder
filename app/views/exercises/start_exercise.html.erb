@@ -1,4 +1,20 @@
 
+<script type="text/javascript">
+
+
+	$(function() {
+		alert("rrr2");
+
+	  return $('form').on('click', '.add_fields', function(event) {
+	    var regexp, time;
+	    time = new Date().getTime();
+	    regexp = new RegExp($(this).data('id'), 'g');
+	    $(this).before($(this).data('fields').replace(regexp, time));
+	    return event.preventDefault();
+	  });
+	});
+</script>
+  
 <p>
 	  <strong>Start Exercises:</strong>
   <%= @exercise.name %>
@@ -18,8 +34,6 @@
      <%= form.label :name %><br>
      <%= form.text_field :name %>
    </p>
- 
- 
  
  <%= form.fields_for :exercise_sets do |ff| %>
   <%= render 'exercise_set_fields', f: ff %>
