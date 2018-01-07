@@ -12,7 +12,7 @@
 
 
 
-<%= form_with model: @exercise, :html => { :method => :post }, :url => url_for(:controller => 'exercises', :action => 'create_set2') , local: true do |form| %>
+<%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
 
    <p>
      <%= form.label :name %><br>
@@ -21,7 +21,7 @@
  
  
  
- <%= form.fields_for :exercise_sets, include_id: false  do |ff| %>
+ <%= form.fields_for :exercise_sets do |ff| %>
   <%= render 'exercise_set_fields', f: ff %>
   <% end %>
 
