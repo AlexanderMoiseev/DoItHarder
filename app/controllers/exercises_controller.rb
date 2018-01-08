@@ -1,6 +1,6 @@
 class ExercisesController < ApplicationController
   
-  
+   
   def initialize
     super
      puts 'ExercisesController init'
@@ -13,14 +13,22 @@ class ExercisesController < ApplicationController
 
    
    def create_set2
-     render plain: params.inspect
-        puts "create_set2"
+     # render plain: params.inspect
+
+    @exercise = Exercise.find(params[:id])
+     
+     if @exercise.update_attributes(params[:exercise]
+       .permit(:name, exercise_sets_attributes: [:id, :exercise_id, :weight, :repetition]))
+       puts "Successfully updated survey."
+     else
+       puts "fail !!!!!!!!!!!!!"
+     end        
                 puts "______________________________________"
                         puts "______________________________________"
    end
    
    def create_set
-    # render plain: params.inspect
+    #render plain: params.inspect
       @exercise = Exercise.find(params[:exercise_id])
       
       exercise_set = @exercise.exercise_sets.new(exercise_set_params)

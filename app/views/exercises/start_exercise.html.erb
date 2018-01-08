@@ -3,8 +3,6 @@
 
 
 	$(function() {
-		alert("rrr2");
-
 	  return $('form').on('click', '.add_fields', function(event) {
 	    var regexp, time;
 	    time = new Date().getTime();
@@ -14,6 +12,8 @@
 	  });
 	});
 </script>
+  
+  
   
 <p>
 	  <strong>Start Exercises:</strong>
@@ -30,6 +30,8 @@
 
 <%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
 
+
+   
    <p>
      <%= form.label :name %><br>
      <%= form.text_field :name %>
