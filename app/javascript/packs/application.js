@@ -16,7 +16,7 @@ window.jQuery = $;
 window.$ = $;
 
 
-require("my_file")
+// require("my_file")
 
 console.log('Hello from application js ')
 

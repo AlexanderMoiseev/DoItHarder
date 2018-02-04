@@ -14,7 +14,6 @@ post "exercises/create_set", to: "exercises#create_set"
 
 # post "exercises/create_set2", to: "exercises#create_set2"
 
-
 resources :exercises do
   member do
     post 'create_set2'
