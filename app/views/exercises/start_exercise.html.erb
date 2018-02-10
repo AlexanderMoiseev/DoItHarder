@@ -25,11 +25,14 @@
    </p>
  
  <%= form.fields_for :exercise_sets do |ff| %>
-  <%= render 'exercise_set_fields', f: ff %>
-  <% end %>
+ 
+ 
+ <!-- <% if ff.object.persisted? %>
+       <%= render 'exercise_set_fields', f: ff %>
+     <% end %> -->
 
-	     <%= link_to_add_fields "Add sets", form, :exercise_sets %>
-		 
+  <% end %>
+	<%= link_to_add_fields "Start Exercise", form, :exercise_sets %>
    <p>
      <%= form.submit 'complete exercise' %>
    </p>

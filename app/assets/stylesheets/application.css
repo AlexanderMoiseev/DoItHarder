@@ -15,6 +15,35 @@
  */
 
 
+.add_fields2 {
+	margin-top:75px;
+	margin-bottom:75px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:1.25em 1.25em;
+    font-family:  "Montserrat", sans-serif;
+ 	font-size: 1.2em;
+	display:block;
+	width:40%;
+	text-align:center;
+	background-color:#242424;
+	color:white;
+	-webkit-transition-duration: 0.6s;
+	transition-duration:0.6s;
+	border:2px solid #3eb5f1;*/
+}
+
+
+.add_fields {
+	
+}
+
+.add_fields:hover {
+	background-color:Cornsilk;
+	color:black;
+}
+
+
 
 .connected-label-inner:after {
 
