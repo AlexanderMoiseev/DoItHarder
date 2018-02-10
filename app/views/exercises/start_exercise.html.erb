@@ -5,14 +5,31 @@
 <p>
 	  <strong>Start Exercises:</strong>
   <%= @exercise.name %>
+  
 </p>
- 
- <br> <br> <br> <br> <br> <br> <br>
- 
- 
-  
-  
 
+  <br>
+   <br>
+   
+   
+ 
+ <% @exercise_sets.each do |set| %>
+    <%= set.id %>
+ <%end %>
+ 
+ <br> <br> <br> 
+  <strong>test rec :</strong>
+ <%=  @testrecord %>
+ 
+
+ <br> <br> <br> <br>
+ 
+ 
+  
+  
+<a class="show_history"> 
+	show_history
+</a>
 
 
 <%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
