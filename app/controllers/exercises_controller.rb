@@ -48,9 +48,11 @@ exercise_set.save
   def start_exercise
     @exercise = Exercise.find(params[:id])
     @exercise_sets = @exercise.exercise_sets
-    @q = ExerciseSet.select("id,date(created_at) as ttt").group("id,date(created_at)")
+    @q = ExerciseSet.select("id,date(created_at) as ttt,repetition,weight")
+    .where("exercise_id = ?", params[:id])
+    .group("id,date(created_at)")
     
-    @testrecord = @q.first.ttt
+    # @testrecord = @q.first.ttt
     
   end
   
