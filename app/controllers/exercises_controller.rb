@@ -37,7 +37,7 @@ class ExercisesController < ApplicationController
        puts exercise_set.weight
 exercise_set.save
 # :exercise_sets
-                           
+
     # @exercise_set = Exercise_set.
    end
    
@@ -51,6 +51,7 @@ exercise_set.save
     @q = ExerciseSet.select("id,date(created_at) as ttt,repetition,weight")
     .where("exercise_id = ?", params[:id])
     .group("id,date(created_at)")
+    .order(created_at: :desc)
     
     # @testrecord = @q.first.ttt
     
