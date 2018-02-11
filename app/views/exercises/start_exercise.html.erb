@@ -7,23 +7,27 @@
   <%= @exercise.name %>
   
 </p>
-
   <br>
-   <br>
-   
-   
-   
-	<h1 class="connected-label">
-		<span class="connected-label zeta uppercase heading-font connected-label-inner" >Hello there</span>
-	</h1>
-
-	
+  
 </div>
- 
  <% @q.each do |set| %>
-    <span> id </span>-- <%= set.id %>      --  date  <%= set.ttt %> ---      repetition    <%= set.repetition %>                --- weight <%= set.weight %>  <br>
+ 
+ <% if set.rn  == 1 %>
+ 	 <h1 class="connected-label">
+
+ 	 <span class="connected-label zeta uppercase heading-font connected-label-inner" >Hello there</span>
+ 	 	</h1>
+     <% end %>
+	 
+	 
+     <%= set.date  %>   --   <%= set.weight  %>   --- <%= set.rn    %>    <br>
+	 
+	 
 	
-	
+		 
+		 
+
+	 
  <%end %>
  
  <br> <br> <br> 

@@ -48,10 +48,19 @@ exercise_set.save
   def start_exercise
     @exercise = Exercise.find(params[:id])
     @exercise_sets = @exercise.exercise_sets
-    @q = ExerciseSet.select("id,date(created_at) as ttt,repetition,weight")
-    .where("exercise_id = ?", params[:id])
-    .group("id,date(created_at)")
-    .order(created_at: :desc)
+    
+    sql = "SELECT id, date(created_at), repetition,weight , ROW_NUMBER () OVER (
+ PARTITION BY date(created_at)
+ ORDER BY
+ date(created_at) desc
+ ) as rn
+FROM exercise_sets where exercise_id=61"
+    # @q  = ActiveRecord::Base.connection.execute(sql)
+    @q = ExerciseSet.find_by_sql(sql);
+    # @q = ExerciseSet.select("id,date(created_at) as ttt,repetition,weight")
+ #    .where("exercise_id = ?", params[:id])
+ #    .group("id,date(created_at)")
+ #    .order(created_at: :desc)
     
     # @testrecord = @q.first.ttt
     
