@@ -11,10 +11,22 @@
 
 <div class="history">
 	
-    <% @q.each do |product| %>
-        <tr>
-          <td><%= product.id %></td>
-        </tr>
+    <% @q.each do |set| %>
+        
+   	 <% if set.rn  == 1 %>
+   	    <div class="wrapper">
+   	    	<hr/>
+   	    			<h1 class="connected-label">
+			
+   	    		<span class="connected-label zeta uppercase heading-font connected-label-inner" >Hello there</span>
+   	    			</h1>
+   	    		</div>
+   	     <% end %>
+	 
+   	     <%= set.date  %>   --   <%= set.weight  %>   --- <%= set.rn    %>    <br>
+		 
+          <%= set.rn %> <br>
+       
     <% end %>
 	
 	 <%= will_paginate @q %>

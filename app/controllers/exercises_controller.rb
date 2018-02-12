@@ -62,16 +62,11 @@ exercise_set.save
  ) as rn
 FROM exercise_sets where exercise_id=61"
 
-    arr = ExerciseSet.find_by_sql(sql);
-  
-  
-    paged = arr.paginate(:per_page => 2)      #->  ['a', 'b']
+    # arr = ExerciseSet.find_by_sql(sql);
+    # paged = arr.paginate(:per_page => 2)     
     
-    
-    
-  @q = arr.paginate(:page => params[:page], :per_page => 2)
-  
-  
+    @q = ExerciseSet.paginate_by_sql(sql, :page => params[:page], :per_page => 4)
+  # @q = arr.paginate(:page => params[:page], :per_page => 2)
   
   # @users =  User.paginate_by_sql(sql, :page => @page, :per_page => @per_page)
     
