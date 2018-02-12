@@ -23,6 +23,8 @@ gem 'webpacker'
 gem 'devise', '~> 4.3'
 gem 'rails-erd', require: false, group: :development
 
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

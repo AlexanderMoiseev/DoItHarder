@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  
+  require 'will_paginate/array'
    
   def initialize
     super
@@ -46,23 +46,34 @@ exercise_set.save
   end
   
   def start_exercise
+    # render plain: params.inspect
+    
     @exercise = Exercise.find(params[:id])
     @exercise_sets = @exercise.exercise_sets
     
-    sql = "SELECT id, date(created_at), repetition,weight , ROW_NUMBER () OVER (
+    
+     # @q = ExerciseSet.paginate(:page => params[:page], :per_page => 2)
+#
+
+    sql = "SELECT id, date(created_at) as date, repetition,weight , ROW_NUMBER () OVER (
  PARTITION BY date(created_at)
  ORDER BY
  date(created_at) desc
  ) as rn
 FROM exercise_sets where exercise_id=61"
-    # @q  = ActiveRecord::Base.connection.execute(sql)
-    @q = ExerciseSet.find_by_sql(sql);
-    # @q = ExerciseSet.select("id,date(created_at) as ttt,repetition,weight")
- #    .where("exercise_id = ?", params[:id])
- #    .group("id,date(created_at)")
- #    .order(created_at: :desc)
+
+    arr = ExerciseSet.find_by_sql(sql);
+  
+  
+    paged = arr.paginate(:per_page => 2)      #->  ['a', 'b']
     
-    # @testrecord = @q.first.ttt
+    
+    
+  @q = arr.paginate(:page => params[:page], :per_page => 2)
+  
+  
+  
+  # @users =  User.paginate_by_sql(sql, :page => @page, :per_page => @per_page)
     
   end
   

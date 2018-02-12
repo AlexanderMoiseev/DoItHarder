@@ -7,28 +7,21 @@
   <%= @exercise.name %>
   
 </p>
-  <br>
-  
-</div>
- <% @q.each do |set| %>
- 
- <% if set.rn  == 1 %>
- 	 <h1 class="connected-label">
 
- 	 <span class="connected-label zeta uppercase heading-font connected-label-inner" >Hello there</span>
- 	 	</h1>
-     <% end %>
-	 
-	 
-     <%= set.date  %>   --   <%= set.weight  %>   --- <%= set.rn    %>    <br>
-	 
-	 
+
+<div class="history">
 	
-		 
-		 
+    <% @q.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+        </tr>
+    <% end %>
+	
+	 <%= will_paginate @q %>
+	 
 
 	 
- <%end %>
+</div>
  
  <br> <br> <br> 
   <strong>test rec :</strong>

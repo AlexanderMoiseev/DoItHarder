@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.history {
+    width:60%;	
+}
 
 .show_history {
 	display:block;
@@ -162,6 +165,9 @@ html {
 
 .footer {
 	position: absolute;
+	
+	display:none;
+	
 /*	display:flex;*/
     height:300px;
 	width:100%;
