@@ -1,18 +1,14 @@
+<%= javascript_pack_tag 'my_file' %>
+	
 
-  	<%= javascript_pack_tag 'my_file' %>
-	
-	
 <p>
 	  <strong>Start Exercises:</strong>
   <%= @exercise.name %>
   
 </p>
 
-
 <div class="history">
-	
     <% @q.each do |set| %>
-        
    	 <% if set.rn  == 1 %>
    	    <div class="wrapper">
    	    	<hr/>
@@ -41,12 +37,10 @@
  
 
  <br> <br> <br> <br>
- 
- 
   
   
 <a class="show_history"> 
-	show_history
+	show_history2
 </a>
 
 
