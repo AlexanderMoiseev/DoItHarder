@@ -55,20 +55,20 @@ exercise_set.save
      # @q = ExerciseSet.paginate(:page => params[:page], :per_page => 2)
 #
 
-    sql = "SELECT id, date(created_at) as date, repetition,weight , ROW_NUMBER () OVER (
+oid = 61;
+
+    sql = ["SELECT id, date(created_at) as date, repetition,weight , ROW_NUMBER () OVER (
  PARTITION BY date(created_at)
  ORDER BY
  date(created_at) desc
  ) as rn
-FROM exercise_sets where exercise_id=61"
+FROM exercise_sets where exercise_id=?", oid];
 
-    # arr = ExerciseSet.find_by_sql(sql);
+
+    # @q = ExerciseSet.find_by_sql(sql);
     # paged = arr.paginate(:per_page => 2)     
-    
-    @q = ExerciseSet.paginate_by_sql(sql, :page => params[:page], :per_page => 4)
+    @q = ExerciseSet.paginate_by_sql(sql, :page => params[:page], :per_page => 50)
   # @q = arr.paginate(:page => params[:page], :per_page => 2)
-  
-  # @users =  User.paginate_by_sql(sql, :page => @page, :per_page => @per_page)
     
   end
   
