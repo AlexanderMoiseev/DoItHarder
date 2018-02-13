@@ -7,7 +7,23 @@
 $(function() {
 	console.log('my file js4')
 	
-  
+
+
+  $(".show-history").click(function(){  
+  	
+    $.ajax({
+      type: "GET",
+      url: "/exercises/load_exercise"
+    }).done(function(data) {
+
+ $('#history').html(data);
+  		// $( this ).addClass( "done" );
+    });
+ 
+})
+
+
+
   return $('form').on('click', '.add_fields', function(event) {
     var regexp, time;
 	

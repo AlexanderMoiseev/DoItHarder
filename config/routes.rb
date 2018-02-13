@@ -2,9 +2,14 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'routines/index'
   
+  get 'exercises/index'
+
+
 get "routines/show_exercises", to: "routines#show_exercises"
 get "routines/add_exercise",  to: "routines#add_exercise"
 
+
+get "exercises/load_exercise",  to: "exercises#load_exercise", as: 'exercises_load_exercise'
 
 get "exercises/start_exercise/:id",  to: "exercises#start_exercise", as: 'exercises_start_exercise'
 

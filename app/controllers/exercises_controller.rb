@@ -8,7 +8,18 @@ class ExercisesController < ApplicationController
 
   
   def index
+  # for i in 1..500000 do
+  #   puts "index !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  # end
+
+      puts "index !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      puts "index 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+
      @exercises = Exercise.all
+
+
+
    end
 
    
@@ -28,6 +39,7 @@ class ExercisesController < ApplicationController
    end
    
    def create_set
+
     #render plain: params.inspect
       @exercise = Exercise.find(params[:exercise_id])
       
@@ -45,10 +57,13 @@ exercise_set.save
    
   end
   
-  def start_exercise
-    # render plain: params.inspect
-    
-    @exercise = Exercise.find(params[:id])
+
+  def load_exercise
+     puts "load_exercise !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+ 
+
+     @exercise = Exercise.find(61)
     @exercise_sets = @exercise.exercise_sets
     
     
@@ -69,7 +84,19 @@ FROM exercise_sets where exercise_id=?", oid];
     # paged = arr.paginate(:per_page => 2)     
     @q = ExerciseSet.paginate_by_sql(sql, :page => params[:page], :per_page => 50)
   # @q = arr.paginate(:page => params[:page], :per_page => 2)
+
+          # render json: {status: @q}
+
+          render partial: 'history_items'
+
+
+  end
+  def start_exercise
+    # render plain: params.inspect
+     puts "start_exercise !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+     @exercise = Exercise.find(params[:id])
     
+
   end
   
   def show
@@ -83,10 +110,11 @@ FROM exercise_sets where exercise_id=?", oid];
   
   
   
+
+
   def create    
    
     @exercise =  current_user.exercises.new(exercise_params)
-     
      if @exercise.save
         redirect_to @exercise
       else
