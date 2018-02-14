@@ -5,21 +5,24 @@
 // });
 
 $(function() {
-	console.log('my file js4')
+	console.log('my file js4');
 	
 
 
   $(".show-history").click(function(){  
-  	
+  	$('.loader').show();
     $.ajax({
       type: "GET",
       url: "/exercises/load_exercise"
     }).done(function(data) {
 
  $('#history').html(data);
-  		// $( this ).addClass( "done" );
-    });
- 
+    }).fail(function() {
+      alert('error occured');
+    }).always(function() {
+      $('.loader').hide();   
+    })
+    ;
 })
 
 
