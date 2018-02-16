@@ -1,11 +1,26 @@
 <%= javascript_pack_tag 'my_file' %>
 	
-
 <p>
-	  <strong>Start Exercises:</strong>
-  <%= @exercise.name %>
-  
+  <strong><%= @exercise.name %></strong>
 </p>
+
+<%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
+   <!-- <p>
+     <%= form.label :name %><br>
+     <%= form.text_field :name %>
+   </p> -->
+ <%= form.fields_for :exercise_sets do |ff| %>
+ <!-- <% if ff.object.persisted? %>
+       <%= render 'exercise_set_fields', f: ff %>
+     <% end %> -->
+  <% end %>
+
+  <%= link_to_add_fields "Start Exercise", form, :exercise_sets %>
+   <p>
+     <%= form.submit 'complete exercise' , class: "complete-exercise-form" %>
+   </p>
+ <% end %>
+
 
 
  
@@ -29,34 +44,8 @@
 
 
 
-<%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
 
-
-   
-   <p>
-     <%= form.label :name %><br>
-     <%= form.text_field :name %>
-   </p>
- 
- <%= form.fields_for :exercise_sets do |ff| %>
- 
- 
- <!-- <% if ff.object.persisted? %>
-       <%= render 'exercise_set_fields', f: ff %>
-     <% end %> -->
-
-  <% end %>
-	<%= link_to_add_fields "Start Exercise", form, :exercise_sets %>
-   <p>
-     <%= form.submit 'complete exercise' %>
-   </p>
- <% end %>
-
-
-
- 
- 
- <br> <br> <br> <br> <br> <br> <br>
+ <br> <br> <br> 
   <%= link_to 'Edit', edit_exercise_path(@exercise) %>
 
 <%= link_to 'Back', exercises_path %>
