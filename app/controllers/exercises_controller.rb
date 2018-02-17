@@ -2,26 +2,15 @@ class ExercisesController < ApplicationController
   require 'will_paginate/array'
    
   def initialize
+ 
+    @testo = "sdsd"
     super
      puts 'ExercisesController init'
    end
 
-  
   def index
-  # for i in 1..500000 do
-  #   puts "index !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-  # end
-
-      puts "index !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      puts "index 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
-
      @exercises = Exercise.all
-
-
-
    end
-
    
    def create_set2
      # render plain: params.inspect
@@ -33,13 +22,10 @@ class ExercisesController < ApplicationController
        puts "Successfully updated survey."
      else
        puts "fail !!!!!!!!!!!!!"
-     end        
-                puts "______________________________________"
-                        puts "______________________________________"
+     end           
    end
    
    def create_set
-
     #render plain: params.inspect
       @exercise = Exercise.find(params[:exercise_id])
       
@@ -59,18 +45,21 @@ exercise_set.save
   
 
   def load_exercise
+    
+
+
      puts "load_exercise !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-
- 
-
-     @exercise = Exercise.find(61)
-    @exercise_sets = @exercise.exercise_sets
-    
-    
+     puts params[:id]
+     
+     # puts @testo
+     # puts @exercise.id;
+     # puts @exercise;
+    #  @exercise = Exercise.find(61)
+    # @exercise_sets = @exercise.exercise_sets
      # @q = ExerciseSet.paginate(:page => params[:page], :per_page => 2)
 #
 
-oid = 61;
+  oid = params[:id];
 
     sql = ["SELECT id, date(created_at) as date, repetition,weight , ROW_NUMBER () OVER (
  PARTITION BY date(created_at)
@@ -95,7 +84,7 @@ FROM exercise_sets where exercise_id=?", oid];
     # render plain: params.inspect
      puts "start_exercise !!!!!!!!!!!!!!!!!!!!!!!!!!!!"
      @exercise = Exercise.find(params[:id])
-    
+
 
   end
   

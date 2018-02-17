@@ -10,16 +10,18 @@ $(function() {
 
 
   $(".show-history").click(function(){  
+    id = $(this).closest("a").data("id");
+
   	$('.loader').show();
     $.ajax({
       type: "GET",
-      url: "/exercises/load_exercise"
+      url: "/exercises/load_exercise/" + id,
     }).done(function(data) {
 
  $('#history').html(data);
-    }).fail(function() {
+    }).fail(function(w) {
       alert('error occured');
-    }).always(function() {
+    }).always(function(w) {
       $('.loader').hide();   
     })
     ;
