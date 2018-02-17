@@ -4,6 +4,21 @@
   <strong><%= @exercise.name %></strong>
 </p>
 
+
+
+
+
+ <br> <br> <br> <br>
+  
+  
+
+
+<div id="history" style="width: 1000px; height: 100px; background-color: gray;">
+<a class="show-history" data-id="<%= @exercise.id %>"> 
+  show history
+</a>
+
+  <div class="loader"></div>
 <%= form_with model: @exercise, :html => { :method => :post }, url: create_set2_exercise_path, local: true do |form| %>
    <!-- <p>
      <%= form.label :name %><br>
@@ -20,26 +35,6 @@
      <%= form.submit 'complete exercise' , class: "complete-exercise-form" %>
    </p>
  <% end %>
-
-
-
- 
- <br> <br> <br> 
-  <strong>test rec :</strong>
- <%=  @testrecord %>
- 
-
- <br> <br> <br> <br>
-  
-  
-<a class="show-history" data-id="<%= @exercise.id %>"> 
-	show history
-</a>
-
-<div id="history" style="width: 1000px; height: 1000px; background-color: gray;">
-
-<div class="loader"></div>
-
 </div>
 
 
