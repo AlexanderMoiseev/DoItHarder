@@ -15,6 +15,7 @@
  */
 
 /*lb-192-30-252-153-iad.github.com
+sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset
 lb-192-30-252-154-iad.github.com*/
 
 .complete-exercise-form {
@@ -47,8 +48,23 @@ lb-192-30-252-154-iad.github.com*/
     width:60%;	
 }
 
+.show-chart:hover {
+	background-color:Cornsilk;
+	color:black;
+}
+.show-chart {
+	display:inline-block;
+	
+	width:40%;
+	text-align:center;
+	background-color:#242424;
+	color:white;
+	-webkit-transition-duration: 0.6s;
+	transition-duration:0.6s;
+	border:2px solid #3eb5f1;*/
+}
 .show-history {
-	display:block;
+	display:inline-block;
 	
 	width:40%;
 	text-align:center;
