@@ -1,9 +1,11 @@
+<%= javascript_include_tag "//www.google.com/jsapi" %>
 <%= javascript_pack_tag 'my_file' %>
 	
 <p>
   <strong><%= @exercise.name %></strong>
 </p>
 
+<%= pie_chart Exercise.group(:id).count %>
 
  <br> <br> <br> <br>
   
@@ -29,9 +31,14 @@
  <% end %>
 
  <div id="history" style="width: 1000px; height: 500px; background-color: gray;">
-  <a class="show-history" data-id="<%= @exercise.id %>"> 
+
+
+
+  <%= link_to("show history",'javascript:void(0)', {:class => 'show-history' , id: @exercise.id })  %>
+
+<!--   <a class="show-history" data-id="<%= @exercise.id %>"> 
     show history
-  </a>
+  </a> -->
 
 
     <a class="show-chart" data-id="<%= @exercise.id %>"> 

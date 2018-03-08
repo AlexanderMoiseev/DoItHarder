@@ -3,14 +3,21 @@
 // $(document).ready(function() {
 //     console.log( " my file ready !" );
 // });
+import Chartkick from "chartkick";
+window.Chartkick = Chartkick;
+
+// for Chart.js
+import Chart from "chart.js";
+window.Chart = Chart;
 
 $(function() {
 	console.log('my file js4');
 	
-
+var chart = Chartkick.charts["chart-id"];
 
   $(".show-history").click(function(){  
-    id = $(this).closest("a").data("id");
+
+   var id = $(this).attr("id");
 
   	$('.loader').show();
     $.ajax({
