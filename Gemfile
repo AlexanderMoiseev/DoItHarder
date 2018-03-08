@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'chartkick', '~> 2.3'
+gem 'groupdate', '~> 4.0'
+gem 'active_median', '~> 0.1.4'
 # Bundle edge Rails instead: gem 'rails',  github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
