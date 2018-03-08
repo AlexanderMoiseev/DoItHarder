@@ -5,7 +5,16 @@
   <strong><%= @exercise.name %></strong>
 </p>
 
-<%= pie_chart Exercise.group(:id).count %>
+
+<div >
+    <h3>Visits By Day</h3>
+    <%= line_chart @exercise.exercise_sets.group_by_day(:created_at, format: "%B %d, %Y").maximum(:weight) , discrete: true %>
+
+    <%= line_chart Exercise.group(:id).count %>
+
+  </div>
+
+
 
  <br> <br> <br> <br>
   
