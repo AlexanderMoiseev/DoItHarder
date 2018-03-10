@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root to: "home#index"
-  get 'routines/index'
-  
+  get 'routines/index'  
   get 'exercises/index'
 
+
+
+
+get "charts/show_exercise_sets/:exercise_id", to: "charts#show_exercise_sets", as:'charts_show_exercise_sets'
 
 get "routines/show_exercises", to: "routines#show_exercises"
 get "routines/add_exercise",  to: "routines#add_exercise"

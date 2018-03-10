@@ -8,8 +8,10 @@
 
 <div >
     <h3>Visits By Day</h3>
-    <%= column_chart @exercise.exercise_sets.group_by_day(:created_at).minimum(:weight) , discrete: true %>
+    <%= column_chart charts_show_exercise_sets_path(@exercise.id), discrete: true %>
 
+
+<h4> second test chart <
     <%= line_chart Exercise.group(:id).count %>
 
   </div>
