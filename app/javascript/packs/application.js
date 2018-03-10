@@ -15,6 +15,10 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+import Chartkick from "chartkick";
+window.Chartkick = Chartkick;
+import Chart from "chart.js";
+window.Chart = Chart;
 
 // require("my_file")
 

@@ -8,7 +8,7 @@
 
 <div >
     <h3>Visits By Day</h3>
-    <%= line_chart @exercise.exercise_sets.group_by_day(:created_at, format: "%B %d, %Y").maximum(:weight) , discrete: true %>
+    <%= column_chart @exercise.exercise_sets.group_by_day(:created_at).minimum(:weight) , discrete: true %>
 
     <%= line_chart Exercise.group(:id).count %>
 

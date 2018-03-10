@@ -14,6 +14,9 @@ exercise =  Exercise.create(name: "PushUp", created_at: Time.now.to_datetime - 8
 
 
 set_list = [
+[ 10, 10, exercise.id, nil,  Time.now.to_datetime - 30,  Time.now.to_datetime - 30 ],
+[ 10, 15, exercise.id, nil,  Time.now.to_datetime - 27,  Time.now.to_datetime - 27 ],
+
 
 	[ 10, 60, exercise.id, nil,  Time.now.to_datetime - 10,  Time.now.to_datetime - 10 ],
 	[ 10, 65, exercise.id, nil,  Time.now.to_datetime - 10,  Time.now.to_datetime - 10 ],
