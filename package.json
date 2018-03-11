@@ -6,6 +6,7 @@
     "chart.js": "^2.7.1",
     "chartkick": "^2.3.0",
     "coffeescript": "1.12.7",
+    "flatpickr": "^4.3.2",
     "jquery": "^3.2.1"
   },
   "devDependencies": {

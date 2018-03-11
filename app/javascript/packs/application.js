@@ -7,41 +7,15 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-// import jQuery from 'jquery'
-
-// window.jQuery = jQuery
 
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
-import Chartkick from "chartkick";
-window.Chartkick = Chartkick;
-import Chart from "chart.js";
-window.Chart = Chart;
+import 'plugins/chartkick'
+import 'plugins/flatpickr'
 
 // require("my_file")
 
 console.log('Hello from application js ')
 
-
-
-//
-// return $('form').on('click', '.add_fields', function(event) {
-// 	  alert("load");
-//   var regexp, time;
-//   time = new Date().getTime();
-//   regexp = new RegExp($(this).data('id'), 'g');
-//   $(this).before($(this).data('fields').replace(regexp, time));
-//   return event.preventDefault();
-// });
-
-
-
-
-
-// require('script')
-//
-//
-// console.log('Hello World from Webpacker')
-//
