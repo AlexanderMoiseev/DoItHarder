@@ -6,7 +6,7 @@
 
 
 // for Chart.js
-
+ 
 
 $(function() {
 	console.log('my file js4');
