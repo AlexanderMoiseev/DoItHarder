@@ -11,11 +11,27 @@
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-
 import 'plugins/chartkick'
 import 'plugins/flatpickr'
 
-// require("my_file")
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from '../components/App'
+
+// import {Provider} from 'react-redux'
+// import {applyMiddleware, createStore} from "redux"
+// import thunk from "redux-thunk"
+// import reducers from '../reducers/index'
+// import {fromJS} from 'immutable';
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(React.version);
+
+  ReactDOM.render(
+      <App/>,
+    document.querySelector('#app')
+  );
+});
 
 console.log('Hello from application js ')
 

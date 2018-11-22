@@ -3,11 +3,13 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
+    "babel-preset-react": "^6.24.1",
     "chart.js": "^2.7.1",
     "chartkick": "^2.3.0",
     "coffeescript": "1.12.7",
     "flatpickr": "^4.3.2",
     "jquery": "^3.2.1",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
