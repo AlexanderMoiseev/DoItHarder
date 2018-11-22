@@ -8,7 +8,8 @@
     "coffeescript": "1.12.7",
     "flatpickr": "^4.3.2",
     "jquery": "^3.2.1",
-    "react": "^16.6.3"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "jquery": "^3.2.1",
