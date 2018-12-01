@@ -6,15 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-	<%= javascript_pack_tag 'application' %>
+		<%= javascript_pack_tag 'application' %>
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCy1iV_Chbe8Nb3atImLKQs7W2xDuQCQz4"></script> -->
 
   </head>
 
-
   <body>
-	  
- 	 <div class="header">
+ 	   <div class="header">
  	 	<nav > 
 			<% if user_signed_in? %>
 			  <li>
@@ -39,17 +37,15 @@
 			<li> <%= link_to 'Home', root_path  %>  </li>
 		</nav>
  	 </div>
-	 
+
 	 <div class="content-container">
     	 <%= yield %>
-	</div>
-	
+ 	</div>
+
+
 	 <footer class="footer">
-	 	
-	 </footer>
-	 
+
+	 </footer> 
+
   </body>
- 
-  
-  
 </html>

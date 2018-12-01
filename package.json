@@ -11,7 +11,9 @@
     "jquery": "^3.2.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "react_ujs": "^2.4.4"
   },
   "devDependencies": {
     "jquery": "^3.2.1",

@@ -18,20 +18,26 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
 
-// import {Provider} from 'react-redux'
-// import {applyMiddleware, createStore} from "redux"
-// import thunk from "redux-thunk"
-// import reducers from '../reducers/index'
-// import {fromJS} from 'immutable';
+console.log('Hello World from Webpacker')
+// Support component names relative to this directory:
+// var componentRequireContext = require.context("components", true)
+// var ReactRailsUJS = require("react_ujs")
+// ReactRailsUJS.useContext(componentRequireContext)
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log(React.version);
+// function renderGroups() {
+//    ReactDOM.render(
+//       <App/>,
+//     document.querySelector('#app')
+//   );
+// }
+// window.renderGroups = renderGroups;
 
-  ReactDOM.render(
-      <App/>,
-    document.querySelector('#app')
-  );
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log(React.version);
 
-console.log('Hello from application js ')
+//   ReactDOM.render(
+//       <App/>,
+//     document.querySelector('#app')
+//   );
+// });
 
