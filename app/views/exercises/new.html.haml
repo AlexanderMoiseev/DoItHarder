@@ -1,0 +1,5 @@
+= form_with scope: :exercise, url: exercises_path, local: true do |form| 
+  %div= form.label :name
+  %div= form.text_field :name
+  %p= form.submit
+= link_to 'Back', exercises_path

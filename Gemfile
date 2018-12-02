@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'chartkick', '~> 2.3'
 gem 'groupdate', '~> 4.0'
 gem 'active_median', '~> 0.1.4'
