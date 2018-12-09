@@ -16,7 +16,10 @@ import 'plugins/flatpickr'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../components/App'
+
+
+import angular from 'angular'
+var ngModule = angular.module('app', []);
 
 console.log('Hello World from Webpacker')
 // Support component names relative to this directory:
