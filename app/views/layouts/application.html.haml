@@ -1,4 +1,4 @@
-%html
+%html{:"ng-app" => "app"}
 	%head
 		%title DoItHarder beeach
 		= csrf_meta_tags
@@ -19,6 +19,11 @@
 					%li= link_to('Register', new_user_registration_path) 
 
 				%li= link_to 'Home', root_path 
+				%li= link_to 'Home2', root_path
+				%li= link_to 'Home3', root_path
+				%li= link_to 'Home4', root_path
+				%li= link_to 'Home5', root_path
+				%li= "{{1 + 2}}"
 
 		.content-container
 			= yield
