@@ -23,6 +23,10 @@ import angular from 'angular'
 var ngModule = angular.module('app', []);
 
 console.log('Hello World from Webpacker')
+
+ import './application.scss'
+
+
 // Support component names relative to this directory:
 // var componentRequireContext = require.context("components", true)
 // var ReactRailsUJS = require("react_ujs")
