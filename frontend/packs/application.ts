@@ -18,13 +18,38 @@ import 'plugins/flatpickr'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import uirouter from 'angular-ui-router'
+import './main/_home.html'
+// import {MainCtrl} from './main/MainCtrl.js'
+ function MainCtrl() {
+
+}
+
+export default angular
+    .module("app", [])
+    .controller("MainCtrl", MainCtrl);
 
 import angular from 'angular'
-var ngModule = angular.module('app', []);
+var ngModule = angular.module('app', [])
+;
+
+// template: require('./main/_home.html'), -- loader dont work
+
+angular.module('app', ['ui.router']).config(['$stateProvider', '$urlRouterProvider',
+function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    .state('home', {
+        url: '/home',
+        template: require('./main/_home.html'),
+        controller: 'MainCtrl'
+    });
+    $urlRouterProvider.otherwise('home');
+}])
+
 
 console.log('Hello World from Webpacker')
 
- import './application.scss'
+import './application.scss'
 
 
 // Support component names relative to this directory:
