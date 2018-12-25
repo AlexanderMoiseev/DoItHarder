@@ -8,4 +8,9 @@ environment.loaders.append('html', {
     use: 'html-loader'
   })
 
+  // environment.loaders.append('ts', {
+  //   test: /\.ts$/,
+  //   loaders: ['ts-loader']
+  // })
+
 module.exports = environment

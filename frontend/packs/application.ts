@@ -8,6 +8,10 @@
 // layout file, like app/views/layouts/application.html.erb
 
 
+// import {Component} from "@angular/core";
+// import {NgModule} from "@angular/core";
+// import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+// import {BrowserModule} from "@angular/platform-browser";
 
 import $ from 'jquery';
 window.jQuery = $;
@@ -33,6 +37,7 @@ import angular from 'angular'
 var ngModule = angular.module('app', [])
 ;
 
+
 // template: require('./main/_home.html'), -- loader dont work
 
 angular.module('app', ['ui.router']).config(['$stateProvider', '$urlRouterProvider',
@@ -45,6 +50,9 @@ function($stateProvider, $urlRouterProvider) {
     });
     $urlRouterProvider.otherwise('home');
 }])
+
+
+
 
 
 console.log('Hello World from Webpacker')
@@ -74,3 +82,30 @@ import './application.scss'
 //   );
 // });
 
+
+
+
+
+
+
+// @Component({
+//     selector:'my-app',
+//     template: `<h1>Hello World !</h1>`
+// })
+// export class HelloWorld {
+
+
+// }
+
+
+// @NgModule({
+//     declarations: [HelloWorld],
+//     // imports: [BrowserModule],
+//     bootstrap: [HelloWorld]
+// })
+// export class AppModule {
+
+// }
+
+
+// platformBrowserDynamic().bootstrapModule(AppModule);

@@ -21,6 +21,8 @@ lb-192-30-252-154-iad.github.com*/
 @import "routines.scss";
 
 nav {
+	display:flex;
+	padding: 10px;
 	li {
 		a {
 			color:wheat;
