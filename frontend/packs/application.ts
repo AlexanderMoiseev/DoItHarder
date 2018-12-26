@@ -14,8 +14,8 @@
 // import {BrowserModule} from "@angular/platform-browser";
 
 import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
+// window.jQuery = $;
+// window.$ = $;
 import 'plugins/chartkick'
 import 'plugins/flatpickr'
 
