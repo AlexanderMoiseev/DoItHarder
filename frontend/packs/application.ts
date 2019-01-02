@@ -12,6 +12,16 @@
 // import {NgModule} from "@angular/core";
 // import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 // import {BrowserModule} from "@angular/platform-browser";
+import "reflect-metadata";
+import 'zone.js';
+import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+
+// import { AppComponent } from './app.component';
 
 import $ from 'jquery';
 // window.jQuery = $;
@@ -24,34 +34,33 @@ import ReactDOM from 'react-dom'
 
 import uirouter from 'angular-ui-router'
 import './main/_home.html'
+
 // import {MainCtrl} from './main/MainCtrl.js'
+// export default angular
+//     .module("app", [])
+//     //  .controller("MainCtrl", MainCtrl)
+//     ;
+// import angular from 'angular'
+// var ngModule = angular.module('app', [])
+// ;
 
 
-export default angular
-    .module("app", [])
-    //  .controller("MainCtrl", MainCtrl)
-    ;
-import angular from 'angular'
-var ngModule = angular.module('app', [])
-;
-
-angular.module('app', ['ui.router']).config(['$stateProvider', '$urlRouterProvider',
-function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-    .state('home', {
-        url: '/home',
-        template: require('./main/_home.html'),
-        // controller: 'MainCtrl'
-    });
-    $urlRouterProvider.otherwise('home');
-}])
+// angular.module('app', ['ui.router']).config(['$stateProvider', '$urlRouterProvider',
+// function($stateProvider, $urlRouterProvider) {
+//     $stateProvider
+//     .state('home', {
+//         url: '/home',
+//         template: require('./main/_home.html'),
+//         // controller: 'MainCtrl'
+//     });
+//     $urlRouterProvider.otherwise('home');
+// }])
 
 
 
 
 
 console.log('Hello World from Webpacker')
-
 import './application.scss'
 
 
@@ -79,28 +88,34 @@ import './application.scss'
 
 
 
+@Component({
+    selector: 'app-root',
+    template: require('./main/_home.html')
+  })
+  export class AppComponent {
+    title = 'testapp1';
+  }
+  
+  @NgModule({
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      BrowserModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    platformBrowserDynamic().bootstrapModule(AppModule);
+  });
+
+// platformBrowserDynamic().bootstrapModule(AppModule)
+//   .catch(err => console.error(err));
 
 
-
-
-// @Component({
-//     selector:'my-app',
-//     template: `<h1>Hello World !</h1>`
-// })
-// export class HelloWorld {
-
-
-// }
-
-
-// @NgModule({
-//     declarations: [HelloWorld],
-//     // imports: [BrowserModule],
-//     bootstrap: [HelloWorld]
-// })
-// export class AppModule {
-
-// }
 
 
 // platformBrowserDynamic().bootstrapModule(AppModule);

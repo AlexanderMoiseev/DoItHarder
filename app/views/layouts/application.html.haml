@@ -1,4 +1,4 @@
-%html{:"ng-app" => "app"}
+%html
 	%head
 		%title DoItHarder beeach
 		= csrf_meta_tags
@@ -25,6 +25,5 @@
 				%li= "{{1 + 2}}"
 
 		.content-container
-			-# = yield
-			%ui-view
+			%app-root
 		.footer
