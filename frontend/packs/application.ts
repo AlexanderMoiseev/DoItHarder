@@ -7,11 +7,15 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-
 // import {Component} from "@angular/core";
 // import {NgModule} from "@angular/core";
 // import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 // import {BrowserModule} from "@angular/platform-browser";
+
+
+// https://medium.com/@avatsaev/angular-2-and-ruby-on-rails-user-authentication-fde230ddaed8
+// https://github.com/alenteria/rails-angular4
+
 import "reflect-metadata";
 import 'zone.js';
 import { NgModule } from '@angular/core';
@@ -20,7 +24,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-
+import { AppRoutingModule } from './main/app-routing.module';
+import { HeroesComponent }      from './heroes/heroes.component';
+import { ExercisesComponent }      from './exercises/exercises.component';
+import {APP_BASE_HREF} from '@angular/common';
 // import { AppComponent } from './app.component';
 
 import $ from 'jquery';
@@ -31,32 +38,8 @@ import 'plugins/flatpickr'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 import uirouter from 'angular-ui-router'
 import './main/_home.html'
-
-// import {MainCtrl} from './main/MainCtrl.js'
-// export default angular
-//     .module("app", [])
-//     //  .controller("MainCtrl", MainCtrl)
-//     ;
-// import angular from 'angular'
-// var ngModule = angular.module('app', [])
-// ;
-
-
-// angular.module('app', ['ui.router']).config(['$stateProvider', '$urlRouterProvider',
-// function($stateProvider, $urlRouterProvider) {
-//     $stateProvider
-//     .state('home', {
-//         url: '/home',
-//         template: require('./main/_home.html'),
-//         // controller: 'MainCtrl'
-//     });
-//     $urlRouterProvider.otherwise('home');
-// }])
-
-
 
 
 
@@ -87,35 +70,29 @@ import './application.scss'
 // });
 
 
-
 @Component({
-    selector: 'app-root',
-    template: require('./main/_home.html')
-  })
-  export class AppComponent {
-    title = 'testapp1';
-  }
-  
-  @NgModule({
-    declarations: [
-      AppComponent
-    ],
-    imports: [
-      BrowserModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-  })
-  export class AppModule { }
+  selector: 'app-root',
+  template: require('./main/_home.html')
+})
+export class AppComponent {
+  title = 'app works!';
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
-    platformBrowserDynamic().bootstrapModule(AppModule);
-  });
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    ExercisesComponent
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule
+  ],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.error(err));
-
-
-
-
-// platformBrowserDynamic().bootstrapModule(AppModule);
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+});
