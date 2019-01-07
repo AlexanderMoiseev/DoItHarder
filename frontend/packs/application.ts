@@ -26,6 +26,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppRoutingModule } from './main/app-routing.module';
 import { HeroesComponent }      from './heroes/heroes.component';
+import { GreetingsComponent }      from './greetings/greetings.component';
+
 import { ExercisesComponent }      from './exercises/exercises.component';
 import {APP_BASE_HREF} from '@angular/common';
 // import { AppComponent } from './app.component';
@@ -82,7 +84,8 @@ export class AppComponent {
   declarations: [
     AppComponent,
     HeroesComponent,
-    ExercisesComponent
+    ExercisesComponent,
+    GreetingsComponent
   ],
   imports: [
     AppRoutingModule,
