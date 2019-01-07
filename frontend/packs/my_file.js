@@ -9,7 +9,7 @@
  
 
 $(function() {
-	console.log('my file js4');
+	console.log('my file with chartkick charts');
 	
 var chart = Chartkick.charts["chart-id"];
 
