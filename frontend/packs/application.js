@@ -72,30 +72,48 @@ import './application.scss'
 // });
 
 
-@Component({
-  selector: 'app-root',
-  template: require('./main/_home.html')
-})
-export class AppComponent {
-  title = 'app works!';
-}
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    ExercisesComponent,
-    GreetingsComponent
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule
-  ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+import Vue from 'vue'
+import App from '../app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule);
-});
+  const el = document.body.appendChild(document.createElement('hello'))
+  const app = new Vue({
+    el,
+    render: h => h(App)
+  })
+
+  console.log(app)
+})
+
+
+
+
+
+// @Component({
+//   selector: 'app-root',
+//   template: require('./main/_home.html')
+// })
+// export class AppComponent {
+//   title = 'app works!';
+// }
+
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     HeroesComponent,
+//     ExercisesComponent,
+//     GreetingsComponent
+//   ],
+//   imports: [
+//     AppRoutingModule,
+//     BrowserModule
+//   ],
+//   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+//   bootstrap: [AppComponent]
+// })
+// export class AppModule { }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   platformBrowserDynamic().bootstrapModule(AppModule);
+// });
