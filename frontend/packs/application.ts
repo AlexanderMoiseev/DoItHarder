@@ -75,45 +75,72 @@ import './application.scss'
 
 import Vue from 'vue'
 import App from '../app.vue'
+import Slider from '../slider.vue'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.body.appendChild(document.createElement('hello'))
-  const app = new Vue({
-    el,
-    render: h => h(App)
-  })
 
-  console.log(app)
+
+
+@Component({
+  selector: 'app-root',
+  template: require('./main/_home.html')
 })
+export class AppComponent {
+  title = 'app works!';
+}
 
-
-
-
-
-// @Component({
-//   selector: 'app-root',
-//   template: require('./main/_home.html')
-// })
-// export class AppComponent {
-//   title = 'app works!';
-// }
-
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     HeroesComponent,
-//     ExercisesComponent,
-//     GreetingsComponent
-//   ],
-//   imports: [
-//     AppRoutingModule,
-//     BrowserModule
-//   ],
-//   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule { }
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeroesComponent,
+    ExercisesComponent,
+    GreetingsComponent
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule
+  ],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   platformBrowserDynamic().bootstrapModule(AppModule);
 // });
+
+// import TurbolinksAdapter from 'vue-turbolinks';
+
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+  const el1 = document.body.appendChild(document.createElement('hello'))
+  const app = new Vue({
+    el:el1,
+    render: h => h(App)
+  });
+
+
+  // var app = new Vue({
+  //   el: '#app',
+  //   data: {
+  //     message: 'Hello Vue!'
+  //   }
+  // })
+
+  const slider_element = document.getElementById("sliderElementData")
+  
+  // Next we want to grab and parse the json from 
+  // the mounting element's data attribute
+  const props = JSON.parse(slider_element.getAttribute('data'))
+
+  const el2 = document.body.appendChild(document.createElement('slider'))
+  
+  const slider = new Vue({
+    el:el2,
+    render: h => h(Slider, { props })
+  });
+
+  console.log(app)
+
+  // console.log(slider)
+})
+

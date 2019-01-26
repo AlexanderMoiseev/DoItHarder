@@ -3,7 +3,11 @@ const path = require('path')
 var webpack = require('webpack')
 environment.config.set('resolve.extensions', ['.html'])
 
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const vue =  require('./loaders/vue')
+
+
+environment.plugins.append('VueLoaderPlugin', new VueLoaderPlugin())
 
 environment.loaders.append('vue', vue)
 

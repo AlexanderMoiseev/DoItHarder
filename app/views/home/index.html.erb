@@ -13,7 +13,11 @@
         <%= link_to 'routines', routines_path(@routine) %>
 </ul>
 
-<p>
-    <% @message %>
-</p>
-<%= @message %>
+
+<%= @message  %>
+
+<% props = {
+    slider_message: @message + @message+ @message+ @message
+  }.to_json
+%>
+<div id="sliderElementData" data="<%= props %>"></div>
