@@ -37,11 +37,15 @@ environment.loaders.append('html', {
   //   }]
   // })
 
+
+
   environment.plugins.prepend(
     'Provide',
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
-      $: 'jquery'
+      $: 'jquery',
+      Popper: ['popper.js', 'default'],
+      popper: ['popper.js', 'default']
     })
   )
 
