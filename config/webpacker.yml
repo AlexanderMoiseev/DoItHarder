@@ -18,7 +18,6 @@ default: &default
     - .erb
     - .js
     - .jsx
-    - .ts
     - .vue
     - .sass
     - .scss

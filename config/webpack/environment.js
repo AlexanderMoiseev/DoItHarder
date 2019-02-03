@@ -6,7 +6,6 @@ environment.config.set('resolve.extensions', ['.html'])
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const vue =  require('./loaders/vue')
 
-
 environment.plugins.append('VueLoaderPlugin', new VueLoaderPlugin())
 
 environment.loaders.append('vue', vue)
@@ -28,15 +27,15 @@ environment.loaders.append('html', {
   //   }]
   // }
 
-  environment.loaders.append('ts', {
-    test: /\.ts$/,
-    use: [{
-      loader: 'ts-loader',
-      options: {
-        appendTsSuffixTo: [/\.vue$/]
-      }
-    }]
-  })
+  // environment.loaders.append('ts', {
+  //   test: /\.ts$/,
+  //   use: [{
+  //     loader: 'ts-loader',
+  //     options: {
+  //       appendTsSuffixTo: [/\.vue$/]
+  //     }
+  //   }]
+  // })
 
   environment.plugins.prepend(
     'Provide',
