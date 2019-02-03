@@ -44,10 +44,27 @@ environment.loaders.append('html', {
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
-      Popper: ['popper.js', 'default'],
-      popper: ['popper.js', 'default']
+      Popper: ['popper.js', 'default']
     })
   )
 
+  environment.loaders.append('ts', {
+    test: /\.css$/,
+    use: [{
+      loader: 'style-loader'
+    },
+    {
+      loader: 'css-loader'
+    }
+    ]
+  })
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 module.exports = environment

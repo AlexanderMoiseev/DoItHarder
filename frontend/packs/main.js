@@ -31,8 +31,9 @@ import Vue from 'vue'
 import App from '../app.vue'
 import Slider from '../slider.vue'
 
-import 'bootstrap/dist/js/bootstrap';
-
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 $( document ).ready(function() {
   console.log( "document ready2!" );
