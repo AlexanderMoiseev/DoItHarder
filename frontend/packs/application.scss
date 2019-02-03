@@ -17,9 +17,11 @@
 sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset
 lb-192-30-252-154-iad.github.com*/
 
+@import "~bootstrap/scss/bootstrap";
+
 @import "./styles/main.scss";
 @import "./styles/routines.scss";
-// @import '~bootstrap/scss/bootstrap';
+
 
 nav {
 	display:flex;

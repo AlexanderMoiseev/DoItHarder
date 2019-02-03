@@ -16,6 +16,18 @@ environment.loaders.append('html', {
     use: 'html-loader'
   })
 
+  environment.plugins.prepend(
+    'Provide',
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      Popper: ['popper.js', 'default']
+    })
+  )
+
+module.exports = environment
+
+
 
   // module.exports = {
   //   test: /\.(ts|tsx)?(\.erb)?$/,
@@ -26,7 +38,6 @@ environment.loaders.append('html', {
   //     }
   //   }]
   // }
-
   // environment.loaders.append('ts', {
   //   test: /\.ts$/,
   //   use: [{
@@ -37,34 +48,3 @@ environment.loaders.append('html', {
   //   }]
   // })
 
-
-
-  environment.plugins.prepend(
-    'Provide',
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      Popper: ['popper.js', 'default']
-    })
-  )
-
-  environment.loaders.append('ts', {
-    test: /\.css$/,
-    use: [{
-      loader: 'style-loader'
-    },
-    {
-      loader: 'css-loader'
-    }
-    ]
-  })
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
-  }
-module.exports = environment
